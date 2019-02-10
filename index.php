@@ -1,7 +1,7 @@
 <?php
 
 spl_autoload_register(function ($name){
-    require "DZ2/$name.php";
+    require "DZ2_2/$name.php";
 });
 
 // DZ1
@@ -20,12 +20,15 @@ spl_autoload_register(function ($name){
 
 //DZ2
 
-$a = new PieceProduct(null, "Книга", 100);
-var_dump($a->calcDohod(3));
+//$a = new PieceProduct(null, "Книга", 100);
+//var_dump($a->calcDohod(3));
+//
+//$b = new DigitalProduct(null, "DigitalBook", 100);
+//var_dump($b->calcDohod(2));
+//
+//$c = new WeightProduct(null, "Рис", 15);
+//var_dump($c->calcDohod(1.45));
 
-$b = new DigitalProduct(null, "DigitalBook", 100);
-var_dump($b->calcDohod(2));
-
-$c = new WeightProduct(null, "Рис", 15);
-var_dump($c->calcDohod(1.45));
+$a = PieceProduct::getInstance();
+var_dump($a);
 
