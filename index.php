@@ -29,6 +29,28 @@ spl_autoload_register(function ($name){
 //$c = new WeightProduct(null, "Рис", 15);
 //var_dump($c->calcDohod(1.45));
 
-$a = PieceProduct::getInstance();
+echo "Создаем объект:";
+$a = PieceProduct::getInstance(null, "ЧтоЭтоТакое", 1000, 0.5);
 var_dump($a);
+$count = 2;
+
+echo "доход с ".$a->getName() .":" . $a->calcDohod($count). "р. за " . $count ." штуки <br>";
+
+echo "Пробуем создать другой объект:";
+$b = PieceProduct::getInstance(null, "Новое", 200, 0.6);
+var_dump($b);
+
+echo "поменять параметры можно только отдельной функцией";
+$b->setNewParams(null, "Новое", 200, 0.6);
+var_dump($a);
+var_dump($b);
+echo "доход с ".$a->getName() .":" . $a->calcDohod($count). "р. за " . $count ." штуки <br>";
+echo "доход с ".$b->getName() .":" . $b->calcDohod($count). "р. за " . $count ." штуки <br>";
+echo "В итоге две переменные с одним и тем же объектом";
+
+
+
+
+
+
 

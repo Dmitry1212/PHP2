@@ -8,15 +8,13 @@ abstract class Product
     private $price;
     private $dohod;
 
-    use SingletonTrait;
-
-//    private function __construct($id, $name, $price, $dohod)
-//    {
-//        $this->id = $id;
-//        $this->name = $name;
-//        $this->price = $price;
-//        $this->dohod = $dohod;
-//    }
+    protected function __construct($id, $name, $price, $dohod)
+    {
+        $this->id = $id;
+        $this->name = $name;
+        $this->price = $price;
+        $this->dohod = $dohod;
+    }
 
     abstract function calcCost($count);
 
